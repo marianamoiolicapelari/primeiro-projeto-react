@@ -18,7 +18,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 💡 Como executar o projeto
 
-Esse projeto foi elaborado para web e mobile. </br>
+Esse projeto foi elaborado para web. </br>
 Para acessar basta clicar no link abaixo:
 
 https:
