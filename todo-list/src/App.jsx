@@ -1,34 +1,41 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 
+import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
+
+import { Container, ToDoList, Input, Button, ListItem } from './styles.js'
+
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "Nada" }])
+  const [inputTask, setInputTask] = useState('')
 
 
   function inputMudou(event) {
-    console.log(event.target.value)
-    setList([{ id: uuid(), task: event.target.value }])
-
-    console.log(list)
+    setInputTask(event.target.value)
   }
 
   function cliqueNoBotao() {
-    console.log("Cliquei no botão!")
+    setList([...list, { id: uuid(), task: inputTask }])
+
   }
 
   return (
-    <div>
-      <input onChange={inputMudou} placeholder="Digite o que tenha para fazer..." />
-      <button onClick={cliqueNoBotao}>Adicionar</button>
+    <Container>
+      <ToDoList>
+        <Input onChange={inputMudou} placeholder="O que tenho para fazer..." />
+        <Button onClick={cliqueNoBotao}>Adicionar</Button>
 
-      <ul>
-        {
-          list.map(item => (
-            <li key={item.id}>{item.task}</li>
-          ))
-        }
-      </ul>
-    </div>
+        <ul>
+          {list.map(item => (
+            <ListItem>
+              <FcCheckmark />
+              <li key={item.id}>{item.task}</li>
+              <FcEmptyTrash />
+            </ListItem>
+          ))}
+        </ul>
+      </ToDoList>
+    </Container>
   )
 }
 
