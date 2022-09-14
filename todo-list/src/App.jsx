@@ -6,7 +6,7 @@ import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
 import { Container, ToDoList, Input, Button, ListItem } from './styles.js'
 
 function App() {
-  const [list, setList] = useState([{ id: uuid(), task: "Nada" }])
+  const [list, setList] = useState([{ id: uuid(), task: "Café" }])
   const [inputTask, setInputTask] = useState('')
 
 
