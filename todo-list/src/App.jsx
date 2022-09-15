@@ -16,7 +16,18 @@ function App() {
 
   function cliqueNoBotao() {
     setList([...list, { id: uuid(), task: inputTask, finished: false }])
+  }
 
+  function finalizarTarefa(id) {
+    const newList = list.map(item => (
+      item.id === id ? { ...item, finished: !item.finished } : item
+    ))
+    setList(newList)
+  }
+
+  function deletarItem(id) {
+    const newList = list.filter(item => item.id !== id)
+    setList(newList)
   }
 
   return (
@@ -27,10 +38,10 @@ function App() {
 
         <ul>
           {list.map(item => (
-            <ListItem isFinished={item.finished}>
-              <FcCheckmark />
-              <li key={item.id}>{item.task}</li>
-              <FcEmptyTrash />
+            <ListItem isFinished={item.finished} key={item.id}>
+              <FcCheckmark onClick={() => finalizarTarefa(item.id)} />
+              <li>{item.task}</li>
+              <FcEmptyTrash onClick={() => deletarItem(item.id)} />
             </ListItem>
           ))}
         </ul>
