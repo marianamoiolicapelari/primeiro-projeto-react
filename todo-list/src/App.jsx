@@ -6,7 +6,7 @@ import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
 import { Container, ToDoList, Input, Button, ListItem } from './styles.js'
 
 function App() {
-  const [list, setList] = useState([{ id: uuid(), task: "Café" }])
+  const [list, setList] = useState([{ id: uuid(), task: "Café", finished: true }])
   const [inputTask, setInputTask] = useState('')
 
 
@@ -15,7 +15,7 @@ function App() {
   }
 
   function cliqueNoBotao() {
-    setList([...list, { id: uuid(), task: inputTask }])
+    setList([...list, { id: uuid(), task: inputTask, finished: false }])
 
   }
 
@@ -27,7 +27,7 @@ function App() {
 
         <ul>
           {list.map(item => (
-            <ListItem>
+            <ListItem isFinished={item.finished}>
               <FcCheckmark />
               <li key={item.id}>{item.task}</li>
               <FcEmptyTrash />

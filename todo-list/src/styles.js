@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    background: #3838;
+    background: #383838;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -41,7 +41,7 @@ export const Button = styled.button`
 `
 
 export const ListItem = styled.div`
-    background: #E4E4E4;
+    background: ${ props => props.isFinished ? '#E8FF8B' : '#E4E4E4'};
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     height: 60px;
