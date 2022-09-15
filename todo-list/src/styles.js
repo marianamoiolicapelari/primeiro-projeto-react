@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
 
 export const Container = styled.div`
     background: #383838;
@@ -38,6 +39,15 @@ export const Button = styled.button`
     font-size: 17px;
     line-height: 2px;
     width: 130px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.6;
+    }
 `
 
 export const ListItem = styled.div`
@@ -55,4 +65,11 @@ export const ListItem = styled.div`
     li {
         list-style: none;
     }
+`
+
+export const Trash = styled(FcEmptyTrash)`
+    cursor: pointer;
+`
+export const Check = styled(FcCheckmark )`
+    cursor: pointer;
 `
