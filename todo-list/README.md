@@ -3,10 +3,6 @@
 ## 💻 Sobre o Projeto
 Todo-list desenvolvido em React.
 
-## 🎨 Layout
-
-![image]()
-
 ## 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
